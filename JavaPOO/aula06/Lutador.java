@@ -1,3 +1,4 @@
+package aula06;
 public class Lutador {
     //Atributos
     private String nome;
@@ -24,8 +25,7 @@ public class Lutador {
         System.out.println("----------------------------------------------------------");
     }
     public void status(){
-        System.out.println(getNome());
-        System.out.printf("é um peso %s, \n", getCategoria());
+        System.out.printf("\n %s é um peso %s, \n",getNome(), getCategoria());
         System.out.printf("com %s vitórias \n", getVitorias());
         System.out.printf("%s derrotas \n", getDerrotas());
         System.out.printf("%s empates. \n", getEmpates());
@@ -40,7 +40,7 @@ public class Lutador {
         this.setEmpates(getEmpates() + 1);
     }
     //Métodos Especiais
-    public void Lutador(String no, String na, int id, float al, float pe, int vi, int de, int em){
+    public Lutador(String no, String na, int id, float al, float pe, int vi, int de, int em){
         this.nome = no;
         this.nacionalidade = na;
         this.idade = id;
@@ -82,7 +82,7 @@ public class Lutador {
         this.peso = pe;
         this.setCategoria();
     }
-    private String getCategoria(){
+    public String getCategoria(){
         return categoria;
     }
     private void setCategoria(){
@@ -95,7 +95,7 @@ public class Lutador {
         }else if(this.getPeso() <= 120.2){
             this.categoria = "Pesado";
         }else{
-            this.setCategoria("Inválido");
+            this.categoria = "Inválido";
         }
     }
     public int getVitorias(){
